@@ -1,0 +1,63 @@
+NOME...: Róbison Joel Guimarães Simon
+DATA...: 02/01/2022
+ASSUNTO: Principais comandos para rotinas com usuários, grupos e suas permissões.
+=========================================================================================================================
+
+
+1. Adicionar usuário:
+
+    $ sudo adduser nomedousuario
+
+ou
+
+    $ sudo useradd nomedousuario
+
+
+2. Setar uma senha para um determinado usuário:
+
+    $ sudo passwd nomedousuario
+
+
+3. Adicionar grupo:
+
+    $sudo addgroup nomedogrupo
+
+ou
+
+    $ sudo groupadd nomedogrupo
+
+
+4. Setar permissão a um diretório:
+
+    $ sudo chmod -R 777 /pasta
+
+
+5. Adicionando pasta ao grupo:
+
+    $ sudo chown -R :nomedogrupo /pasta
+
+
+6. Adicionando usuário a um grupo:
+
+    $ sudo adduser nomedousuario nomedogrupo
+
+
+7. Excluir um usuário de um grupo:
+
+    $ sudo deluser nomedousuario nomedogrupo
+
+
+8. Listar os grupos existentes:
+
+    $ sudo cat /etc/group
+
+
+
+
+Dar permissões de sudo para um usuário qualquer:
+
+    $ sudo adduser nomedousuario sudo
+
+ou
+
+    Inserindo-o no arquivo sudoers em /etc/sudoers
