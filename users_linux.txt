@@ -4,11 +4,13 @@ ASSUNTO: Principais comandos para rotinas com usuários, grupos e suas permissõ
 =========================================================================================================================
 
 
+PARA USUÁRIOS 
+
 1. Adicionar usuário:
 
     $ sudo adduser nomedousuario
 
-ou
+    ou
 
     $ sudo useradd nomedousuario
 
@@ -18,46 +20,80 @@ ou
     $ sudo passwd nomedousuario
 
 
-3. Adicionar grupo:
+3. Excluindo um usuário do sistema:
+
+    $ sudo userdel usuario
+
+
+4. Listar os usuários cadastrados no sistema.
+
+    $ sudo cat /etc/passwd 
+
+
+
+PARA GRUPOS
+
+5. Adicionar grupo:
 
     $sudo addgroup nomedogrupo
 
-ou
+    ou
 
     $ sudo groupadd nomedogrupo
 
 
-4. Setar permissão a um diretório:
+6. Excluindo grupo do sistema:
 
-    $ sudo chmod -R 777 /pasta
-
-
-5. Adicionando pasta ao grupo:
-
-    $ sudo chown -R :nomedogrupo /pasta
+    $ sudo delgroup grupo
 
 
-6. Adicionando usuário a um grupo:
+7. Adicionando usuário a um grupo:
 
     $ sudo adduser nomedousuario nomedogrupo
 
 
-7. Excluir um usuário de um grupo:
+8. Excluir um usuário de um grupo:
+
+    $ sudo deluser usuario grupo
+
+
+9. Excluir um usuário de um grupo:
 
     $ sudo deluser nomedousuario nomedogrupo
 
 
-8. Listar os grupos existentes:
+10. Adicionando pasta ao grupo:
+
+    $ sudo chown -R :nomedogrupo /pasta
+
+
+11. Listar os grupos existentes:
 
     $ sudo cat /etc/group
 
 
+12. Mudar o dono de um arquivo ou pasta:
+
+    $ sudo chown usuário caminho_pasta_ou_arquivo -R
 
 
-Dar permissões de sudo para um usuário qualquer:
+13.  Mudar o grupo dono de um arquivo ou pasta:
+
+    $ sudo chgrp grupo caminho_pasta_ou_arquivo -R
+
+
+
+PARA PERMISSÕES GERAIS
+    
+14. Dar permissões de sudo para um usuário qualquer:
 
     $ sudo adduser nomedousuario sudo
 
-ou
+    ou
 
     Inserindo-o no arquivo sudoers em /etc/sudoers
+
+
+15. Setar permissão a um diretório:
+
+    $ sudo chmod -R 777 /pasta
